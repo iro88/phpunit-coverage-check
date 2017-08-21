@@ -86,7 +86,7 @@ class Main extends Command
 
         $percent = $input->getArgument(self::ARG_PERCENT);
         if(!$this->validator->validatePercent($percent)) {
-            throw new RuntimeException("Percent value '{$percent}' is not number");
+            throw new RuntimeException("Percent value '{$percent}' is not number in range from 0 to 100");
         }
 
         $format = $input->getOption(self::OPT_FORMAT);
