@@ -1,0 +1,37 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+use PhpunitCoverageCheck\Command;
+use PhpunitCoverageCheck\Format;
+use PhpunitCoverageCheck\Service\CoverageCheck;
+use PhpunitCoverageCheck\Validator\ParamsValidator;
+use Symfony\Component\Console\Application;
+use Symfony\Component\Console\Input\InputDefinition;
+use Symfony\Component\Console\Input\InputOption;
+
+require_once __DIR__ . '/../vendor/autoload.php';
+
+$service = new CoverageCheck();
+$service->addFormat(new Format\Clover());
+$service->addFormat(new Format\Html());
+$service->addFormat(new Format\Text());
+
+$application = new Application();
+$application->add(new Command\Main(new ParamsValidator(), $service));
+$application->setDefinition(
+    new InputDefinition(
+        [
+            new InputOption(
+                '--help',
+                '-h',
+                InputOption::VALUE_NONE,
+                'Display this help message'
+            )
+        ]
+    )
+);
+$application->setDefaultCommand(Command\Main::NAME, true);
+$application->setAutoExit(true);
+$application->run();
