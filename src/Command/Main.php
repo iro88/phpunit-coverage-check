@@ -25,6 +25,8 @@ class Main extends Command
     const ARG_PERCENT = 'percent';
     const OPT_FORMAT = 'format';
     const OPT_FORMAT_SHORT = 'f';
+    const OPT_VERBOSE = 'verbose';
+    const OPT_VERBOSE_SHORT = 'v';
 
     private $validator;
     private $service;
@@ -47,6 +49,12 @@ class Main extends Command
                 InputOption::VALUE_REQUIRED,
                 "Supported formats: '" . implode("','", $this->getSupportedFormats()) . "'"
             )
+            ->addOption(
+                self::OPT_VERBOSE,
+                self::OPT_VERBOSE_SHORT,
+                InputOption::VALUE_NONE,
+                "Print input stream"
+            )
             ->addArgument(
                 self::ARG_PERCENT,
                 InputArgument::REQUIRED,
@@ -63,10 +71,15 @@ class Main extends Command
     {
         $this->validate($input);
 
+        $content = $this->getContent($input);
         $percentActual = $this->service->getCoverage(
-            $this->getContent($input),
+            $content,
             $input->getOption(self::OPT_FORMAT)
         );
+
+        if ($input->getOption(self::OPT_VERBOSE)) {
+            $output->writeln($content);
+        }
 
         $percentThreshold = $input->getArgument(self::ARG_PERCENT);
         if ($percentActual >= $percentThreshold) {

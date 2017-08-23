@@ -2,32 +2,35 @@
 
 ## Installation ##
 
-```
+```bash
 composer require --dev iro88/phpunit-coverage-check
 composer update
 ```
 
 ## Usage ##
 
-```
-./bin/phpunit-coverage-check --help
+```bash
+phpunit-coverage-check --help
 ```
 
 ### Check based on text output ###
-```
-phpunit | ./bin/phpunit-coverage-check --format=text 85.00
-```
-or
-```
-./bin/phpunit-coverage-check --format=text 85.00 ./path/to/raport.txt
+```bash
+# using stream
+phpunit | phpunit-coverage-check --format=text 85.00
+
+# ...with verbose mode to see phpunit output
+phpunit | phpunit-coverage-check --format=text -v 85.00
+
+# or file
+phpunit-coverage-check --format=text 85.00 ./path/to/raport.txt
 ```
 
 ### Check based on Clover XML file ###
-```
-./bin/phpunit-coverage-check --format=clover 85.00 ./path/to/clover.xml
+```bash
+phpunit-coverage-check --format=clover 85.00 ./path/to/clover.xml
 ```
 
 ### Check based on Html report ###
-```
-./bin/phpunit-coverage-check --format=clover 85.00 ./path/to/html/index.html
+```bash
+phpunit-coverage-check --format=clover 85.00 ./path/to/html/index.html
 ```

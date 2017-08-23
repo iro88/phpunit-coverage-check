@@ -23,6 +23,6 @@ final class Text implements FormatInterface
                 return (float) $matches['percent'];
             }
         }
-        throw new FormatException('No found value');
+        throw new FormatException('Coverage value not found');
     }
 }
