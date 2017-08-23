@@ -12,7 +12,7 @@ use Symfony\Component\Console\Input\InputDefinition;
 use Symfony\Component\Console\Input\InputOption;
 
 $autoloadDirs = [
-    __DIR__ . '/../autoload.php',
+    __DIR__ . '/../../../autoload.php',
     __DIR__ . '/../vendor/autoload.php',
 ];
 foreach ($autoloadDirs as $file) {
