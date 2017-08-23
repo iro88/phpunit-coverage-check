@@ -11,7 +11,16 @@ use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Input\InputDefinition;
 use Symfony\Component\Console\Input\InputOption;
 
-require_once __DIR__ . '/../vendor/autoload.php';
+$autoloadDirs = [
+    __DIR__ . '/../autoload.php',
+    __DIR__ . '/../vendor/autoload.php',
+];
+foreach ($autoloadDirs as $file) {
+    if (file_exists($file)) {
+        require_once $file;
+        break;
+    }
+}
 
 $service = new CoverageCheck();
 $service->addFormat(new Format\Clover());
