@@ -32,5 +32,5 @@ phpunit-coverage-check --format=clover 85.00 ./path/to/clover.xml
 
 ### Check based on Html report ###
 ```bash
-phpunit-coverage-check --format=clover 85.00 ./path/to/html/index.html
+phpunit-coverage-check --format=html 85.00 ./path/to/html/index.html
 ```
