@@ -1,0 +1,6 @@
+language: php
+php:
+  - 7.0
+  - 7.1
+
+script: phpunit | ./bin/phpunit-coverage-check --format=text -v 95.00
