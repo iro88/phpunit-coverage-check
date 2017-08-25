@@ -1,3 +1,5 @@
+![Travis CI](https://travis-ci.org/iro88/phpunit-coverage-check.svg?branch=master)
+
 # PHPUnit coverage check tool #
 
 ## Installation ##
