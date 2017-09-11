@@ -7,11 +7,11 @@ namespace PhpunitCoverageCheck\Format;
 use DOMDocument;
 use DOMXPath;
 
-/**
- * @codeCoverageIgnore
- */
 final class Html implements FormatInterface
 {
+    /**
+     * @codeCoverageIgnore
+     */
     public function getName(): string
     {
         return 'html';

@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace PhpunitCoverageCheck\Format;
 
-/**
- * @codeCoverageIgnore
- */
 final class Text implements FormatInterface
 {
+    /**
+     * @codeCoverageIgnore
+     */
     public function getName(): string
     {
         return 'text';

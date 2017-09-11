@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1505168169">
+    <project timestamp="1505168169">
+        <package name="PhpunitCoverageCheck\Command">
+            <file name="/home/iro/srv/1_private/phpunit-coverage-check/src/Command/Main.php">
+                <class name="Main" namespace="PhpunitCoverageCheck\Command">
+                    <metrics complexity="9" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+                </class>
+                <metrics loc="119" ncloc="116" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+            </file>
+        </package>
+        <package name="PhpunitCoverageCheck\Format">
+            <file name="/home/iro/srv/1_private/phpunit-coverage-check/src/Format/Clover.php">
+                <class name="Clover" namespace="PhpunitCoverageCheck\Format">
+                    <metrics complexity="3" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+                </class>
+                <metrics loc="32" ncloc="29" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+            </file>
+            <file name="/home/iro/srv/1_private/phpunit-coverage-check/src/Format/FormatException.php">
+                <class name="FormatException" namespace="PhpunitCoverageCheck\Format">
+                    <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+                </class>
+                <metrics loc="14" ncloc="11" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+            </file>
+            <file name="/home/iro/srv/1_private/phpunit-coverage-check/src/Format/Html.php">
+                <class name="Html" namespace="PhpunitCoverageCheck\Format">
+                    <metrics complexity="3" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+                </class>
+                <metrics loc="34" ncloc="29" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+            </file>
+            <file name="/home/iro/srv/1_private/phpunit-coverage-check/src/Format/Text.php">
+                <class name="Text" namespace="PhpunitCoverageCheck\Format">
+                    <metrics complexity="4" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="5" elements="7" coveredelements="5"/>
+                </class>
+                <line num="17" type="method" name="getCoverage" visibility="public" complexity="3" crap="3.04" count="1"/>
+                <line num="19" type="stmt" count="1"/>
+                <line num="20" type="stmt" count="1"/>
+                <line num="21" type="stmt" count="1"/>
+                <line num="22" type="stmt" count="1"/>
+                <line num="23" type="stmt" count="1"/>
+                <line num="26" type="stmt" count="0"/>
+                <metrics loc="28" ncloc="25" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="5" elements="7" coveredelements="5"/>
+            </file>
+        </package>
+        <file name="/home/iro/srv/1_private/phpunit-coverage-check/src/Format/FormatInterface.php">
+            <metrics loc="15" ncloc="12" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+        </file>
+        <package name="PhpunitCoverageCheck\Service">
+            <file name="/home/iro/srv/1_private/phpunit-coverage-check/src/Service/ContentProvider.php">
+                <class name="ContentProvider" namespace="PhpunitCoverageCheck\Service">
+                    <metrics complexity="5" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="5" elements="12" coveredelements="6"/>
+                </class>
+                <line num="9" type="method" name="getContent" visibility="public" complexity="2" crap="2" count="2"/>
+                <line num="11" type="stmt" count="2"/>
+                <line num="12" type="stmt" count="1"/>
+                <line num="14" type="stmt" count="1"/>
+                <line num="17" type="method" name="getContentFromStream" visibility="protected" complexity="3" crap="6.28" count="1"/>
+                <line num="19" type="stmt" count="1"/>
+                <line num="20" type="stmt" count="0"/>
+                <line num="21" type="stmt" count="0"/>
+                <line num="22" type="stmt" count="0"/>
+                <line num="23" type="stmt" count="0"/>
+                <line num="25" type="stmt" count="0"/>
+                <line num="27" type="stmt" count="1"/>
+                <metrics loc="29" ncloc="29" classes="1" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="5" elements="12" coveredelements="6"/>
+            </file>
+            <file name="/home/iro/srv/1_private/phpunit-coverage-check/src/Service/CoverageCheck.php">
+                <class name="CoverageCheck" namespace="PhpunitCoverageCheck\Service">
+                    <metrics complexity="3" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="7" coveredelements="7"/>
+                </class>
+                <line num="14" type="method" name="addFormat" visibility="public" complexity="1" crap="1" count="2"/>
+                <line num="16" type="stmt" count="2"/>
+                <line num="18" type="stmt" count="2"/>
+                <line num="21" type="method" name="getFormats" visibility="public" complexity="1" crap="1" count="1"/>
+                <line num="23" type="stmt" count="1"/>
+                <line num="26" type="method" name="getCoverage" visibility="public" complexity="1" crap="1" count="1"/>
+                <line num="28" type="stmt" count="1"/>
+                <metrics loc="30" ncloc="29" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="7" coveredelements="7"/>
+            </file>
+        </package>
+        <package name="PhpunitCoverageCheck\Validator">
+            <file name="/home/iro/srv/1_private/phpunit-coverage-check/src/Validator/ParamsValidator.php">
+                <class name="ParamsValidator" namespace="PhpunitCoverageCheck\Validator">
+                    <metrics complexity="6" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="10" coveredelements="10"/>
+                </class>
+                <line num="9" type="method" name="validateFile" visibility="public" complexity="2" crap="2" count="3"/>
+                <line num="11" type="stmt" count="3"/>
+                <line num="12" type="stmt" count="2"/>
+                <line num="14" type="stmt" count="1"/>
+                <line num="17" type="method" name="validateFormat" visibility="public" complexity="1" crap="1" count="2"/>
+                <line num="19" type="stmt" count="2"/>
+                <line num="22" type="method" name="validatePercent" visibility="public" complexity="3" crap="3" count="8"/>
+                <line num="24" type="stmt" count="8"/>
+                <line num="25" type="stmt" count="6"/>
+                <line num="27" type="stmt" count="2"/>
+                <metrics loc="29" ncloc="29" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="10" coveredelements="10"/>
+            </file>
+        </package>
+        <metrics files="9" loc="330" ncloc="309" classes="4" methods="9" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="27" coveredstatements="21" elements="36" coveredelements="28"/>
+    </project>
+</coverage>
