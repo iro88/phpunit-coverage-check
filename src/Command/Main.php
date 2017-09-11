@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PhpunitCoverageCheck\Command;
 
+use PhpunitCoverageCheck\Service\ContentProvider;
 use PhpunitCoverageCheck\Service\CoverageCheck;
 use PhpunitCoverageCheck\Validator\ParamsValidator;
 use Symfony\Component\Console\Command\Command;
@@ -30,11 +31,16 @@ class Main extends Command
 
     private $validator;
     private $service;
+    private $contentProvider;
 
-    public function __construct(ParamsValidator $validator, CoverageCheck $service)
-    {
+    public function __construct(
+        ParamsValidator $validator,
+        CoverageCheck $service,
+        ContentProvider $contentProvider
+    ) {
         $this->validator = $validator;
         $this->service = $service;
+        $this->contentProvider = $contentProvider;
 
         parent::__construct();
     }
@@ -71,15 +77,13 @@ class Main extends Command
     {
         $this->validate($input);
 
-        $content = $this->getContent($input);
         $percentActual = $this->service->getCoverage(
-            $content,
+            $this->contentProvider->getContent(
+                $input->getArgument(self::ARG_FILE),
+                $input->getOption(self::OPT_VERBOSE)
+            ),
             $input->getOption(self::OPT_FORMAT)
         );
-
-        if ($input->getOption(self::OPT_VERBOSE)) {
-            $output->writeln($content);
-        }
 
         $percentThreshold = $input->getArgument(self::ARG_PERCENT);
         if ($percentActual >= $percentThreshold) {
@@ -111,14 +115,5 @@ class Main extends Command
     private function getSupportedFormats() : array
     {
         return array_keys($this->service->getFormats());
-    }
-
-    private function getContent(InputInterface $input): string
-    {
-        $filePath = $input->getArgument(self::ARG_FILE);
-        if ($filePath) {
-            return file_get_contents($filePath);
-        }
-        return file_get_contents("php://stdin");
     }
 }

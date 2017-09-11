@@ -5,6 +5,7 @@ declare(strict_types=1);
 
 use PhpunitCoverageCheck\Command;
 use PhpunitCoverageCheck\Format;
+use PhpunitCoverageCheck\Service\ContentProvider;
 use PhpunitCoverageCheck\Service\CoverageCheck;
 use PhpunitCoverageCheck\Validator\ParamsValidator;
 use Symfony\Component\Console\Application;
@@ -28,7 +29,13 @@ $service->addFormat(new Format\Html());
 $service->addFormat(new Format\Text());
 
 $application = new Application();
-$application->add(new Command\Main(new ParamsValidator(), $service));
+$application->add(
+    new Command\Main(
+        new ParamsValidator(),
+        $service,
+        new ContentProvider()
+    )
+);
 $application->setDefinition(
     new InputDefinition(
         [
