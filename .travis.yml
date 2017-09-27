@@ -1,10 +1,19 @@
 language: php
+
 php:
   - 7.0
   - 7.1
+  - 7.2
+
+env:
+  - COMPOSER_FLAGS=--prefer-lowest
+  - COMPOSER_FLAGS=
+
 before_script:
-  - composer install
+  - composer update --no-interaction --no-suggest $COMPOSER_FLAGS
+
 script:
-  - ./vendor/bin/phpunit | ./bin/phpunit-coverage-check --format=text -v 95.00
+  - set -o pipefail && ./vendor/bin/phpunit | ./bin/phpunit-coverage-check --format=text -v 95.00
+
 notifications:
   email: false

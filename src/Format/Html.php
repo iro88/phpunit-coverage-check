@@ -19,11 +19,11 @@ final class Html implements FormatInterface
 
     public function getCoverage(string $content): float
     {
-        $dom = new DomDocument();
+        $dom = new DOMDocument();
         @$dom->loadHTML($content); // cause '<!DOCTYPE html>'
         $xpath = '/html/body/div/table/tbody/tr[1]/td[3]/div';
 
-        $elements = (new DomXPath($dom))->query($xpath);
+        $elements = (new DOMXPath($dom))->query($xpath);
         if ($elements->length === 1) {
             return (float) $elements->item(0)->textContent;
         }

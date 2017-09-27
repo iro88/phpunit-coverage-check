@@ -7,7 +7,6 @@
 
 ```bash
 composer require --dev iro88/phpunit-coverage-check
-composer update
 ```
 
 ## Example usage ##
