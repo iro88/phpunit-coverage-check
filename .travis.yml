@@ -7,7 +7,6 @@ php:
 
 env:
   - COMPOSER_FLAGS=--prefer-lowest
-  - COMPOSER_FLAGS=
 
 before_script:
   - composer update --no-interaction --no-suggest $COMPOSER_FLAGS
