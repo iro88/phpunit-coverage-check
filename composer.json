@@ -1,24 +1,31 @@
 {
-  "name": "iro88/phpunit-coverage-check",
-  "description": "Tool to check phpunit code coverage",
-  "keywords": ["phpunit", "code coverage", "ci"],
-  "version": "1.0.2",
-  "license": "MIT",
-  "authors": [
-    {
-      "name": "Ireneusz Derbich",
-      "email": "ireneusz.derbich@gmail.com"
+    "name": "iro88/phpunit-coverage-check",
+    "description": "Tool to check phpunit code coverage",
+    "keywords": [
+        "phpunit",
+        "code coverage",
+        "ci"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ireneusz Derbich",
+            "email": "ireneusz.derbich@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0",
+        "symfony/console": "^3.3 || v4.0.11"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.2"
+    },
+    "bin": [
+        "bin/phpunit-coverage-check"
+    ],
+    "autoload": {
+        "psr-4": {
+            "PhpunitCoverageCheck\\": "src/"
+        }
     }
-  ],
-  "require": {
-    "php": ">=7.0",
-    "symfony/console": "^3.3"
-  },
-  "require-dev": {
-    "phpunit/phpunit": "^6.2"
-  },
-  "bin": ["bin/phpunit-coverage-check"],
-  "autoload": {
-    "psr-4": {"PhpunitCoverageCheck\\": "src/"}
-  }
 }
